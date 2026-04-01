@@ -1,4 +1,3 @@
-# Unity folders
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -7,29 +6,18 @@
 [Ll]ogs/
 UserSettings/
 
-# Memory captures
-MemoryCaptures/
-
-# Asset Store tools
-Assets/AssetStoreTools*
-
-# IDE files
+# IDE
+.vscode/
 .vs/
 .idea/
+
+# Visual Studio
 *.csproj
 *.sln
 *.slnx
-*.suo
 *.user
 *.userprefs
-*.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
-*.opendb
-*.VC.db
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
