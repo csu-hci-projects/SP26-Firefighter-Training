@@ -21,3 +21,8 @@ UserSettings/
 # OS
 .DS_Store
 Thumbs.db
+
+*.apk
+*.aab
+Builds/
+apk_BackUpThisFolder_ButDontShipItWithYourGame/
