@@ -1,0 +1,64 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Firefighter Training Demo", "Firefighter Training Demo", "{A594F997-0C64-FC4F-AA02-75C6A61CCBF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Firefighter Training Demo\Assembly-CSharp.csproj", "{45168436-A025-460C-5113-6061C5D8314A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Hands.Samples.VisualizerSample", "Firefighter Training Demo\Unity.XR.Hands.Samples.VisualizerSample.csproj", "{92BD7DE0-6EC6-50CD-4050-90725EA84F9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.Hands", "Firefighter Training Demo\Unity.XR.Interaction.Toolkit.Samples.Hands.csproj", "{1ABF598D-B17D-753A-7696-42E91A0C3782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor", "Firefighter Training Demo\Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj", "{C28606B2-7A8C-38F5-5C63-7E7877712215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.StarterAssets", "Firefighter Training Demo\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj", "{5BB39C40-6B00-A8AE-1140-58E3867E699C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor", "Firefighter Training Demo\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj", "{827BF996-A51D-37A2-F8C7-38DB36BE9AD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45168436-A025-460C-5113-6061C5D8314A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45168436-A025-460C-5113-6061C5D8314A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45168436-A025-460C-5113-6061C5D8314A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45168436-A025-460C-5113-6061C5D8314A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92BD7DE0-6EC6-50CD-4050-90725EA84F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92BD7DE0-6EC6-50CD-4050-90725EA84F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92BD7DE0-6EC6-50CD-4050-90725EA84F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92BD7DE0-6EC6-50CD-4050-90725EA84F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ABF598D-B17D-753A-7696-42E91A0C3782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ABF598D-B17D-753A-7696-42E91A0C3782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ABF598D-B17D-753A-7696-42E91A0C3782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ABF598D-B17D-753A-7696-42E91A0C3782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28606B2-7A8C-38F5-5C63-7E7877712215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28606B2-7A8C-38F5-5C63-7E7877712215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28606B2-7A8C-38F5-5C63-7E7877712215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28606B2-7A8C-38F5-5C63-7E7877712215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB39C40-6B00-A8AE-1140-58E3867E699C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB39C40-6B00-A8AE-1140-58E3867E699C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB39C40-6B00-A8AE-1140-58E3867E699C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB39C40-6B00-A8AE-1140-58E3867E699C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{827BF996-A51D-37A2-F8C7-38DB36BE9AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{827BF996-A51D-37A2-F8C7-38DB36BE9AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{827BF996-A51D-37A2-F8C7-38DB36BE9AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{827BF996-A51D-37A2-F8C7-38DB36BE9AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45168436-A025-460C-5113-6061C5D8314A} = {A594F997-0C64-FC4F-AA02-75C6A61CCBF3}
+		{92BD7DE0-6EC6-50CD-4050-90725EA84F9C} = {A594F997-0C64-FC4F-AA02-75C6A61CCBF3}
+		{1ABF598D-B17D-753A-7696-42E91A0C3782} = {A594F997-0C64-FC4F-AA02-75C6A61CCBF3}
+		{C28606B2-7A8C-38F5-5C63-7E7877712215} = {A594F997-0C64-FC4F-AA02-75C6A61CCBF3}
+		{5BB39C40-6B00-A8AE-1140-58E3867E699C} = {A594F997-0C64-FC4F-AA02-75C6A61CCBF3}
+		{827BF996-A51D-37A2-F8C7-38DB36BE9AD5} = {A594F997-0C64-FC4F-AA02-75C6A61CCBF3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBF02123-7B67-4200-A098-E662276B8372}
+	EndGlobalSection
+EndGlobal
