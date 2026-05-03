@@ -1,19 +1,17 @@
 using UnityEngine;
- 
+
 public class Fire : MonoBehaviour
 {
     public float fireHealth = 100f;
- 
+
     public void Extinguish(float amount)
     {
-         Debug.Log("Fire hit! Health: " + fireHealth);
- 
         fireHealth -= amount;
- 
+        VRDebugDisplay.Log("Fire health: " + fireHealth.ToString("F1"));
+
         if (fireHealth <= 0)
         {
-            Debug.Log("Fire destroyed!");
- 
+            VRDebugDisplay.Log("Fire extinguished!");
             Destroy(gameObject);
         }
     }
