@@ -1,10 +1,10 @@
 # ninja log v5
-69	3194	7993744377091478	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3e7a58fc0c8766e5
-41	3215	7993744377220600	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	d4e22ea1c3b513ee
-28	3276	7993744377926783	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	76d131c8acd25510
-94	3300	7993744378128425	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	acc16821452deece
-0	3364	7993744378794924	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	8a4f8717d00fde94
-54	3549	7993744380687473	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7c1b2c8c788d10c7
-16	3649	7993744381633475	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c354bd24036eabb1
-82	3941	7993744384569281	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3e28a7b73c45c26f
-3942	4173	7993744386955170	C:/Users/lenno/FireFighterDemo/Firefighter Training Demo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3d6b1d4p/obj/arm64-v8a/libgame.so	35fa0b4644af0cca
+92	4658	7994843625284631	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3e7a58fc0c8766e5
+73	4690	7994843625345229	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	d4e22ea1c3b513ee
+38	4739	7994843626146715	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	76d131c8acd25510
+111	4761	7994843626364824	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	acc16821452deece
+1	4870	7994843627452454	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	8a4f8717d00fde94
+55	5208	7994843630848113	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7c1b2c8c788d10c7
+21	5412	7994843632883266	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c354bd24036eabb1
+143	5582	7994843634632772	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3e28a7b73c45c26f
+5583	5933	7994843638145044	C:/Users/lenno/FireFighterDemo/Firefighter Training Demo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3d6b1d4p/obj/arm64-v8a/libgame.so	35fa0b4644af0cca
