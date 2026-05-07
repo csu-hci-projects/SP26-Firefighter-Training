@@ -1408,7 +1408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cad473628e7584898ce49d25c980a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fire
-  fireHealth: 100
 --- !u!136 &56778989
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1424,7 +1423,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1432,6 +1431,23 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &56778990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56778984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0204c731754c45b36ea4d3de5ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireBehavior
+  maxIntensity: 100
+  rekinleRate: 2
+  extinguishThreshold: 5
+  fireBurnSound: {fileID: 0}
+  fireExtinguishSound: {fileID: 0}
 --- !u!1001 &61445619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4309,9 +4325,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1342402650}
     m_Modifications:
+    - target: {fileID: 1874617605399546712, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949993086135013859, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486934683336936156, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494000445538703621, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_Name
       value: Fire001 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138516417417149553, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6650292440862550807, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_LocalScale.x
@@ -4375,6 +4415,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1440826964}
+    - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1440826965}
   m_SourcePrefab: {fileID: 100100000, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
 --- !u!1001 &167005499
 PrefabInstance:
@@ -27895,10 +27938,34 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1019245187}
+        m_TargetAssemblyTypeName: Extinguisher, Assembly-CSharp
+        m_MethodName: Spray
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1019245187}
+        m_TargetAssemblyTypeName: Extinguisher, Assembly-CSharp
+        m_MethodName: StopSpray
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
@@ -28005,13 +28072,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1019245179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29b1086b4f43836419b92f9e5b6995bb, type: 3}
+  m_Script: {fileID: 11500000, guid: dc3a24815ac70f5419a2e62dfc6dd2c8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FireExtinguisher
+  m_EditorClassIdentifier: Assembly-CSharp::Extinguisher
+  co2Amount: 1000
+  co2DrainRate: 1
+  extinguishPower: 25
+  sprayRange: 5
+  nozzleTransform: {fileID: 1919180867}
   sprayParticles: {fileID: 1805901804}
-  sprayPoint: {fileID: 1919180867}
-  sprayDistance: 5
-  extinguishAmount: 25
+  spraySound: {fileID: 0}
+  fireLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1020065880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28628,19 +28701,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6650292440862550807, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
   m_PrefabInstance: {fileID: 1765831868}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1037025258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037025254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3cad473628e7584898ce49d25c980a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fire
-  fireHealth: 100
 --- !u!136 &1037025259
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28656,7 +28716,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -28664,6 +28724,23 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1037025260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037025254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0204c731754c45b36ea4d3de5ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireBehavior
+  maxIntensity: 100
+  rekinleRate: 2
+  extinguishThreshold: 5
+  fireBurnSound: {fileID: 0}
+  fireExtinguishSound: {fileID: 0}
 --- !u!1001 &1042739849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38385,7 +38462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cad473628e7584898ce49d25c980a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fire
-  fireHealth: 100
 --- !u!136 &1440826964
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38401,7 +38477,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -38409,6 +38485,23 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1440826965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440826959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0204c731754c45b36ea4d3de5ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireBehavior
+  maxIntensity: 100
+  rekinleRate: 2
+  extinguishThreshold: 5
+  fireBurnSound: {fileID: 0}
+  fireExtinguishSound: {fileID: 0}
 --- !u!1001 &1441408890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38563,7 +38656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cad473628e7584898ce49d25c980a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fire
-  fireHealth: 100
 --- !u!136 &1443434730
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38579,7 +38671,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -38587,6 +38679,23 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1443434731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443434725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0204c731754c45b36ea4d3de5ace6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireBehavior
+  maxIntensity: 100
+  rekinleRate: 2
+  extinguishThreshold: 5
+  fireBurnSound: {fileID: 0}
+  fireExtinguishSound: {fileID: 0}
 --- !u!1001 &1445282122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48504,9 +48613,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1342402650}
     m_Modifications:
+    - target: {fileID: 1874617605399546712, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949993086135013859, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486934683336936156, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494000445538703621, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_Name
       value: Fire001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138516417417149553, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6650292440862550807, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_LocalScale.x
@@ -48566,10 +48699,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1037025258}
+      addedObject: {fileID: 1037025259}
     - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1037025259}
+      addedObject: {fileID: 1037025260}
   m_SourcePrefab: {fileID: 100100000, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
 --- !u!1001 &1767280495
 PrefabInstance:
@@ -55130,9 +55263,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1342402650}
     m_Modifications:
+    - target: {fileID: 1874617605399546712, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949993086135013859, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486934683336936156, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494000445538703621, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_Name
       value: Fire001 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138516417417149553, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6650292440862550807, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_LocalScale.x
@@ -55196,6 +55353,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1443434730}
+    - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1443434731}
   m_SourcePrefab: {fileID: 100100000, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
 --- !u!1001 &1828067527
 PrefabInstance:
@@ -60369,9 +60529,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1342402650}
     m_Modifications:
+    - target: {fileID: 1874617605399546712, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949993086135013859, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486934683336936156, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494000445538703621, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_Name
       value: Fire001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138516417417149553, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6650292440862550807, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       propertyPath: m_LocalScale.x
@@ -60435,6 +60619,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 56778989}
+    - targetCorrespondingSourceObject: {fileID: 4000667520668516784, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 56778990}
   m_SourcePrefab: {fileID: 100100000, guid: d0ec0a14054713c4cb454dc5f34fabb2, type: 3}
 --- !u!1001 &2069787043
 PrefabInstance:
