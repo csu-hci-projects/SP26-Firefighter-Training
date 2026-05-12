@@ -23,25 +23,19 @@ FINAL VIDEOS:
 - Project overview video - (VIEW LINK) [https://www.youtube.com/watch?v=ghuaRHocSTY] 
   (DOWNLOAD LINK) - [https://drive.google.com/file/d/1EwuBNuor26UfmUjgRgLqLRRuzaUgaAYO/view?usp=sharing]
 
-- Project Code video / Presentation - (VIEW LINK) [https://youtu.be/Hq3NDak0_1g] 
+- Project code & presentation video - (VIEW LINK) [https://youtu.be/Hq3NDak0_1g] 
   (DOWNLOAD LINK) - [https://drive.google.com/file/d/1YMQojb0K5vgvnvDs2jsTlqbseKEKu1VU/view?usp=sharing]
-  
-- Project Presentation video (VIEW LINK) - [] 
-  (DOWNLOAD LINK) - []
 
 Google Drive Link to Unity Projct File (Some file sizes are too large for Github) []
-LaTeX file in repo, link: []
-Overleaf link: - []
-PDF-LiteratureSurvey Link: - []
+LaTeX file in repo, link: [https://github.com/csu-hci-projects/SP26-Firefighter-Training/tree/main/Firefighter%20Training%20Demo/Latex_Source/Final_Report_Fire_Safety]
+Overleaf link: - [https://www.overleaf.com/1736735196fwdzmmzhnpdr#cef701]
+PDF-LiteratureSurvey Link: - [https://drive.google.com/file/d/105StwnU5v6co6_NdnsBSwGv5vZxja1iK/view?usp=sharing]
 
 Work Allocation:
 
    Mika : Research paper and collaboration with poudre fire authority
    Jaylen: Assisted with research paper
-   Chandler: Scene setup + assisted with research paper
+   Chandler: Unity scene setup + assisted with research paper
    Lennox: Functionality of experiment. Programming implementation. Unity asset manipulation.
-
-Techincal Demo/ Videos:
-Research Paper: 
 
 OTHER NOTES: 
