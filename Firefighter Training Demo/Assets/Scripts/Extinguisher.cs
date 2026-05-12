@@ -1,42 +1,15 @@
 using UnityEngine;
 
-/// <summary>
-/// Attach this to your fire extinguisher GameObject.
-/// 
-/// SETUP INSTRUCTIONS:
-/// 1. Add this script to your extinguisher GameObject.
-/// 2. Create a child GameObject called "NozzlePoint" at the tip of the nozzle - assign it to nozzleTransform.
-/// 3. Create a CO2 spray Particle System as a child of NozzlePoint - assign it to sprayParticles.
-/// 4. Add a Meta XR Grab Interactable component to the extinguisher.
-/// 5. In the Grab Interactable's events, hook WhenSelectingStarted to Spray() and WhenSelectingStopped to StopSpray().
-/// </summary>
+
 public class Extinguisher : MonoBehaviour
 {
-    [Header("Extinguisher Settings")]
-    [Tooltip("Total CO2 remaining (0-100). Depletes as you spray.")]
     public float co2Amount = 1000f;
-
-    [Tooltip("How fast CO2 depletes per second while spraying.")]
     public float co2DrainRate = 1f;
-
-    [Tooltip("How much intensity the extinguisher removes from fire per second.")]
     public float extinguishPower = 25f;
-
-    [Tooltip("How far the CO2 spray reaches (in meters).")]
-    public float sprayRange = 3f;
-
-    [Header("References")]
-    [Tooltip("The tip of the nozzle - spray shoots from here.")]
+       public float sprayRange = 3f;
     public Transform nozzleTransform;
-
-    [Tooltip("Particle System for the CO2 spray effect.")]
     public ParticleSystem sprayParticles;
-
-    [Header("Audio")]
     public AudioClip spraySound;
-
-    [Header("Layer Settings")]
-    [Tooltip("Set this to the layer your fire GameObjects are on.")]
     public LayerMask fireLayer;
 
     // Internal state
@@ -55,7 +28,6 @@ public class Extinguisher : MonoBehaviour
 
         if (nozzleTransform == null)
         {
-            Debug.LogWarning("Extinguisher: No nozzleTransform assigned! Using this object's transform.");
             nozzleTransform = transform;
         }
     }
@@ -72,7 +44,6 @@ public class Extinguisher : MonoBehaviour
             if (co2Amount <= 0)
             {
                 StopSpray();
-                Debug.Log("Extinguisher empty!");
             }
         }
     }

@@ -1,23 +1,10 @@
 using UnityEngine;
 
-/// <summary>
-/// Attach this to the ROOT fire GameObject (e.g. Fire001).
-/// It will automatically find the ParticleSystem in children.
-/// Make sure the Collider (Is Trigger) is on a child and set to the Fire layer.
-/// </summary>
 public class FireBehavior : MonoBehaviour
 {
-    [Header("Fire Settings")]
-    [Tooltip("How much 'fuel' the fire has. Extinguisher drains this to 0.")]
     public float maxIntensity = 100f;
-
-    [Tooltip("How fast the fire naturally grows back if not fully extinguished (set to 0 to disable).")]
     public float rekinleRate = 2f;
-
-    [Tooltip("Below this intensity, fire is considered fully out.")]
     public float extinguishThreshold = 5f;
-
-    [Header("Audio")]
     public AudioClip fireBurnSound;
     public AudioClip fireExtinguishSound;
 
@@ -45,7 +32,6 @@ public class FireBehavior : MonoBehaviour
         {
             var emission = fireParticles.emission;
             defaultEmissionRate = emission.rateOverTime.constant;
-            Debug.Log($"FireBehavior on {gameObject.name}: Found ParticleSystem on {fireParticles.gameObject.name}");
         }
 
         audioSource = GetComponent<AudioSource>();
@@ -77,14 +63,9 @@ public class FireBehavior : MonoBehaviour
             Extinguish();
     }
 
-    /// <summary>
-    /// Called by the Extinguisher script when CO2 hits this fire.
-    /// </summary>
     public void ApplyExtinguisher(float amount)
     {
         if (isExtinguished) return;
-
-        Debug.Log($"FireBehavior: ApplyExtinguisher called on {gameObject.name}, intensity: {currentIntensity}");
 
         currentIntensity -= amount * Time.deltaTime;
         currentIntensity = Mathf.Clamp(currentIntensity, 0f, maxIntensity);
@@ -116,8 +97,6 @@ public class FireBehavior : MonoBehaviour
         if (isExtinguished) return;
         isExtinguished = true;
 
-        Debug.Log($"{gameObject.name} has been extinguished!");
-
         if (fireParticles != null)
             fireParticles.Stop();
 
@@ -135,4 +114,14 @@ public class FireBehavior : MonoBehaviour
 
     public float GetIntensityNormalized() => currentIntensity / maxIntensity;
     public bool IsExtinguished() => isExtinguished;
+
+    public void EnhanceFire(float amount)
+    {
+        if (isExtinguished) return;
+
+        currentIntensity += amount;
+        currentIntensity = Mathf.Clamp(currentIntensity, 0f, maxIntensity);
+
+        UpdateFireVisuals();
+    }
 }
