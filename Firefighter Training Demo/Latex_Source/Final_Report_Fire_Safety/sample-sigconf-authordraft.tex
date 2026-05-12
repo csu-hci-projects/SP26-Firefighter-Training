@@ -1,0 +1,575 @@
+\documentclass[manuscript, review]{acmart}
+
+\acmYear{2026}
+
+\acmConference[Course Research Report]{Course Research Report}{2026}{Colorado State University}
+
+\begin{document}
+\title{VR Fire Safety Training}
+
+\author{Chandler Brown}
+\affiliation{%
+  \institution{Colorado State University}
+  \city{Fort Collins}
+  \country{USA}}
+
+\author{Jaylen Kelley}
+\affiliation{%
+  \institution{Colorado State University}
+  \city{Fort Collins}
+  \country{USA}}
+
+\author{Lennox Nutall}
+\affiliation{%
+  \institution{Colorado State University}
+  \city{Fort Collins}
+  \country{USA}}
+
+\author{Mika Fish}
+\affiliation{%
+  \institution{Colorado State University}
+  \city{Fort Collins}
+  \country{USA}}
+
+\begin{abstract}
+  Residential fire-safety training isn’t just memorizing rules and best practices, but requires decision making about fire suppression, containment, and evacuation. These decisions are made under potentially stressful and unfamiliar circumstances. Our research and product bring a gamified virtual reality prototype for residential fire-safety training, as well as a controlled study, evaluating if the gamified feedback improves the decision-making, engagement, and learning retention. 
+
+The prototype our team developed places participants in a two-story home scenario with smoke, a grease fire, fire repellent, exits, doors, and dangerous choices such as using water on an inappropriate fire. Our study involves a within-subjects design including 12-participants to compare a gamified VR condition with a non-gamified version of the same scenario. The subjects’ performance was measured based on correct actions, unsafe actions, holistic task timing, evacuation behavior, quiz gain, engagement, usability, and perceived presence. 
+\end{abstract}
+
+\keywords{virtual reality, fire safety, gamification, emergency training, safety behavior, usability, controlled study 
+
+\begin{teaserfigure}
+  \includegraphics[width=\textwidth]{sampleteaser}
+  \caption{Fire Safety Training Using Virtual Reality}
+  \Description{Person utilizing headset to learn fire safety}
+\end{teaserfigure}
+
+\maketitle
+
+\section{Introduction}
+Fire-safety training generally includes steps to best control a fire safely: identify the fire (type), decide if the fire can be suppressed, avoid dangerous actions, close doors if possible, and evacuate in a safe manner. On paper, these steps don’t seem too complicated, but under the pressure of stress, decreased visibility, and unfamiliar suppression techniques, these tasks are more difficult to execute. Prior research and work done in Virtual Reality (VR) has argued that immersive simulations are useful in hazardous/hard-to-repeat situations because the trainees can do actions without being exposed to danger (Kanade & Duffy, 2022; Scorgie et al., 2024). Fire safety is an example of this scenario where the goal isn’t solely to know what the best course of action is, but to be able to physically execute that knowledge in an efficient manner. 
+
+Traditional instruction commonly involves presentations, videos, short demonstrations, and pamphlets. These methods can communicate information to an extent; however, there is often a gap between declarative knowledge and procedural performance. For example, someone may know that some types of fire shouldn’t be treated with water, but that same person may still make an incorrect choice when faced with smoke, time pressure, and/or multiple factors competing for their attention. Experiential learning theories have suggested that people learn more effectively when performing a task, then reflect on what happens, and repeat the experience, instead of only receiving information (Kolb, 1984; Mayer, 2009). This discrepancy is crucial in fire-safety training because a safe response depends on remembering the correct procedure and making the best judgement during the event. 
+
+Virtual reality has the capability to address this issue because it allows users to practice safety procedures in a controlled, realistic environment. This system can include smoke, blocked exits, hazards, and safety equipment, along with the capability to record the participants' actions in the scenario. Tracking may include the user’s time, actions, mistakes, and path taken throughout the course (house). Along with the hands-on training, the user can be measured with metrics on if they made the most optimal choice, and where they can improve for the future. Recent research involving fire-training with VR and AR drills, tangible fire extinguishers, smoke visualization, haptic feedback, and evacuation tasks, utilized both performance data and questionnaires for the efficacy of the simulation (Bikkina et al., 2025; Huang & Yang, 2025; Kang et al., 2022; Seo et al., 2019; Somerkoski et al., 2020). 
+
+ 
+
+The main design question in our research is whether gamification can improve VR fire-safety training without making the experience feel less serious. Points, feedback, rewards, progress information, and final summary elements are used to gamify a program (Deterding et al., 2011; Kapp, 2012). In training systems, these features could engage users and help them better understand the potential consequences of their actions. While these are engaging features, fire safety depends on realism and urgency. If users focus on the point system too much, it may drive attention away from the emergency situation. There must be a level of balance between engagement and realism as the main motivation for the program.  
+
+ 
+
+This research paper will connect 3 elements. First, it explores prior VR fire-safety research centered around designing in regard to the problem. Then, it will dive into the virtual reality residential fire-safety scenario in a two-story home, developed by our team. Finally, the paper will cover a controlled quantitative study including 12 participants that compare the gamified version of the scenario against the non-gamified version. In full, Section 2 overviews state-of-the-art research, Section 3 delves into the prototype, Section 4 provides the method used to evaluate the plan, Section 5 describes the study results, and Section 6 & 7 discuss limitations, future work, and the conclusion.  
+
+\section{Background}
+\subsection{Residential Fire-Safety Decision-Making}
+
+Fire-safety training is a decision-making problem as much as it is a knowledge problem. During a residential fire, a person may need to make several decisions in sequence: whether to fight the fire, whether to evacuate, which route to take, whether to close doors, whether to call emergency services, and how to avoid smoke exposure. These decisions are affected by the user's understanding of the fire, the changing layout of the environment, and the available tools. In a grease-fire scenario, for example, a safe response may involve turning off the heat source if possible, avoiding water, covering the fire or using the appropriate extinguisher, and evacuating if the fire cannot be safely controlled. Because these choices are time-sensitive, the learner must be able to recognize hazards and respond quickly.
+
+Traditional instruction can teach correct procedures, but it cannot fully reproduce the conditions in which those procedures must be performed. A person watching a safety video may understand the correct response in theory, but the same person may hesitate or make unsafe decisions when surrounded by alarms, smoke, reduced visibility, and uncertainty. This is why fire-safety training benefits from practice environments that can simulate action, stress, and consequence without exposing participants to real danger. VR is well suited to this goal because it can create a controlled emergency scenario where users can practice realistic decision-making \cite{kanade2022use,scorgie2024virtual,somerkoski2020digital}.
+
+\subsection{Traditional Fire-Safety Training}
+
+Traditional fire-safety training typically uses passive or semi-passive instruction. Videos, lectures, slides, pamphlets, and demonstrations are useful because they are inexpensive, easy to distribute, and capable of reaching large groups. These methods can define key rules and present standardized information. However, they often lack repeated embodied practice. A user may be told to avoid smoke or close doors, but the training may not require the user to actually make those decisions in a simulated environment.
+
+This limitation matters because fire-safety training aims to change behavior, not just increase awareness. When a user is placed in an emergency-like situation, the user must connect knowledge to action. If traditional instruction only measures recall through a quiz, it may not capture whether the user would behave safely in a realistic scenario. This concern is consistent with broader VR safety-training literature, which emphasizes the value of immersive practice and behavioral measurement \cite{kanade2022use,scorgie2024virtual,bikkina2025learnings}.
+
+Traditional instruction also tends to provide limited individualized feedback. A pamphlet can describe correct actions, but it cannot respond to a user's specific mistake. In contrast, a VR system can record that a user opened a door that should have remained closed, approached a fire for too long, or failed to call emergency services. This feedback can then be used for reflection and improvement. For that reason, the comparison between traditional instruction and VR instruction is central to this paper.
+
+\subsection{Virtual Reality as a Training Medium}
+
+Virtual reality is valuable for safety training because it combines immersion, interaction, and repeatability. Immersion allows the user to feel present in a simulated environment. Interaction allows the user to perform actions rather than only observe instructions. Repeatability allows the same scenario to be presented consistently across participants, which is important for research and evaluation \cite{slater1997five,witmer1998measuring,bailenson2018experience}.
+
+VR is particularly appropriate for hazardous training contexts because it avoids the risks associated with real emergency scenarios. In fire-safety training, realistic live-fire practice can be dangerous, expensive, or unavailable to ordinary learners. VR allows researchers and educators to create a simulated fire environment that can include smoke, blocked routes, alarms, hazards, and objects without putting users at physical risk. Prior work has applied VR to evacuation training, extinguisher practice, industrial safety, construction hazards, and emergency response \cite{kanade2022use,scorgie2024virtual,seo2019interactive,kang2022combining,vercelli2024risk,noghabaei2019virtual,sacks2016construction}.
+
+VR also allows the researcher to measure performance. In a fire-safety scenario, the system can log safe actions, unsafe actions, time to first response, time to evacuation, time spent near hazards, and interaction with safety equipment. These performance measures can be combined with subjective questionnaires such as usability, workload, engagement, presence, and user confidence. This combination of objective and subjective data gives a more complete view of training effectiveness than either type of data alone \cite{bikkina2025learnings,witmer1998measuring}.
+
+\subsection{Gamification and Serious Games}
+
+Gamification uses game-like design elements in a non-game context \cite{deterding2011gamification}. In training, gamification often includes points, goals, levels, immediate feedback, badges, penalties, progress indicators, or performance summaries. Serious games are related but broader: they use game-based design for a serious purpose, such as education, safety, health, or professional training \cite{abt1970serious,prensky2001digital,kapp2012gamification}. In this project, the simulation is not intended to be a game for entertainment. Instead, game-like feedback is used to support learning, motivation, and reflection.
+
+Gamification may support fire-safety training in several ways. First, points and penalties can make consequences visible. A user who performs a safe action receives positive feedback, while a user who performs an unsafe action receives negative feedback. Second, a final score can encourage reflection after the simulation. Third, repeated attempts can motivate users to improve their performance. These design features are consistent with learning theories that emphasize feedback, active learning, and experiential practice \cite{kolb1984experiential,mayer2009multimedia,ryan2000self}.
+
+However, gamification must be used carefully in emergency training. A fire-safety simulation should not encourage reckless exploration or make the emergency feel trivial. If users focus too strongly on points, they may forget that the purpose of the simulation is safety behavior. The design challenge is to use gamified feedback as an educational tool while preserving the seriousness and realism of the situation. This paper directly addresses that challenge by comparing a gamified VR condition with a non-gamified VR condition.
+
+\section{Related Work}
+\label{sec:related-work}
+
+\subsection{VR and Immersive Safety Training}
+
+Prior research broadly supports the use of VR for safety training because it allows learners to practice hazardous procedures in realistic but controlled environments. Kanade and Duffy review the use of VR across safety-training contexts and identify VR as a useful medium for increasing engagement and supporting learning \cite{kanade2022use}. Scorgie et al. similarly examine VR safety training through a systematic review and meta-analysis, showing that VR has become an important research direction for training situations where real-world practice is difficult or risky \cite{scorgie2024virtual}. Together, these works establish the general value of VR as a safety-training tool.
+
+The relevance of these reviews to fire-safety training is that they frame VR as more than a visualization medium. VR is useful because it supports action. In a fire-safety context, the user does not only watch a fire; the user must decide how to respond. This difference matters because emergency training depends on procedural knowledge and situational judgment. The learner must identify cues, select actions, and adapt to changing hazards. Passive instruction can provide information, but immersive training can require the learner to apply that information.
+
+At the same time, these reviews identify limitations in existing VR safety-training research. One limitation is that VR hardware access can restrict deployment. Another limitation is that many studies rely heavily on subjective user feedback rather than objective performance measures \cite{kanade2022use,scorgie2024virtual}. This is important for the current project because a fire-safety training system should not be evaluated only by asking users whether they liked it. The system should also record whether users behaved safely. For this reason, the present study includes both behavioral measures and subjective measures.
+
+\subsection{VR Fire-Safety and Evacuation Training}
+
+Research on VR fire-safety training has often focused on evacuation behavior and emergency response. Kang et al. present a system that combines augmented reality and virtual reality for immersive fire drills \cite{kang2022combining}. Their system uses AR for fire suppression with a tangible extinguisher prototype and then transitions to VR for evacuation tasks, such as covering the mouth and navigating an escape route. This work is important because it demonstrates that fire-safety training can benefit from physical interaction and embodied action. The user is not only selecting an answer; the user is performing a response.
+
+Somerkoski et al. also provide an important foundation for VR and AR fire-safety learning environments \cite{somerkoski2020digital}. Their work emphasizes that digital learning environments can simulate dangerous conditions, such as smoke-filled areas, while keeping the learner safe. They also include a scoring system where correct actions receive positive scores, incorrect actions receive negative scores, and missed actions receive zero. This scoring structure is directly relevant to the current project because it shows how fire-safety actions can be translated into measurable feedback.
+
+Other fire-safety and evacuation systems show that VR can be used for different populations, hazards, and environments. Park et al. focus on fire evacuation training simulation, while Chen et al. describe a VR fire evacuation system with a feedback loop \cite{park2017development,chen2020design}. Qazi et al. examine a Unity-based training platform for emergency fire-handling services, and Chen et al. discuss immersive VR serious games with learning support for fire-safety training \cite{qazi2023developing,chen2022immersive}. These projects show that VR fire-safety training is not limited to one design approach. Systems can focus on evacuation, suppression, feedback, learning assistance, or emergency service practice.
+
+However, existing VR fire-safety systems often emphasize evacuation or equipment use without fully comparing how different feedback structures affect learning and decision-making. For example, an evacuation simulation may show that users can practice finding exits, but it may not show whether a gamified feedback system improves performance compared with the same simulation without scoring. Similarly, an extinguisher simulation may improve familiarity with the tool, but it may not test whether users can decide when fire suppression is appropriate. The present study addresses this gap by comparing gamified VR, non-gamified VR, and traditional instruction in the same residential fire scenario.
+
+\subsection{Embodied Interaction and Haptic Feedback}
+
+Embodied interaction is a key advantage of VR fire-safety training. In traditional instruction, a learner may be told how to use a fire extinguisher or how to move through smoke, but the learner may not physically practice the action. VR allows the user to move, reach, select objects, and perform actions in a simulated space. This can make training more meaningful because the user must connect knowledge to physical behavior \cite{kolb1984experiential,dede2009immersive}.
+
+Seo et al. demonstrate the value of embodied interaction through an interactive VR fire-extinguisher system with haptic feedback \cite{seo2019interactive}. Their system provides vibration and airflow feedback when the user squeezes the extinguisher handle. This improves realism by simulating some of the physical sensations of using an extinguisher. The study is relevant because it shows that physical feedback can make VR fire training more realistic and potentially more effective.
+
+The current project does not require the same level of haptic realism, which is an important limitation. Users may interact with virtual objects using controllers or hand tracking, but they may not experience the full physical weight, resistance, or discharge behavior of a real extinguisher. Even so, embodied interaction remains valuable. The user still must locate objects, make decisions, and perform responses in the environment. The absence of advanced haptics should be acknowledged as a limitation, but it does not eliminate the value of interaction-based training.
+
+\subsection{Fire and Smoke Realism in VR}
+
+Realism in VR fire-safety training depends partly on how the environment represents hazards. Fire and smoke are not only visual effects; they communicate danger, block visibility, change navigation options, and influence user decisions. Huang and Yang propose a method for visualizing building fires in VR using data from numerical simulation software \cite{huang2025building}. Their approach uses factors such as soot density, temperature, heat release rate, oxygen, carbon monoxide, and carbon dioxide to reconstruct a more realistic indoor fire scene in Unity.
+
+This work is important because it highlights a difference between simple visual representation and physically informed simulation. A basic VR fire might use animated flames and smoke particles, but a more advanced model can represent how smoke density, heat, and gas levels change across space. This level of realism may help users better understand how fire conditions develop over time.
+
+The current project does not need to reproduce a full numerical fire model to be useful, but it should still use environmental cues that support decision-making. Smoke should reduce visibility in meaningful ways, exits can become blocked, alarms can create urgency, and fire spread can alter the user's options. These features help the simulation represent the dynamic nature of fire emergencies. The goal is not perfect physical accuracy; the goal is sufficient realism to support training and evaluation.
+
+\subsection{Gamification in Safety Training}
+
+Gamification has been used in training systems to increase motivation, engagement, and feedback. Deterding et al. define gamification as the use of game design elements in non-game contexts \cite{deterding2011gamification}. Kapp connects gamification to learning and instruction, emphasizing that game-like systems can support motivation and feedback when they are aligned with learning goals \cite{kapp2012gamification}. In the context of fire-safety training, gamification can help users understand whether their actions are safe, unsafe, or incomplete.
+
+Somerkoski et al. provide one of the closest examples to the current project because their fire-safety learning environment includes a score-based system \cite{somerkoski2020digital}. Correct actions increase the score, incorrect actions decrease it, and missed actions receive no score. This structure is relevant because it transforms emergency-response behavior into immediate feedback. The current project builds on this idea by using points and penalties in a residential fire scenario.
+
+However, gamification is not automatically beneficial. A gamified system can increase engagement, but it can also distract users if the game elements are poorly designed. In safety training, the risk is that users may focus on score optimization rather than safety reasoning. They may also perceive the scenario as less serious if the interface looks too much like entertainment software. This creates the central design question for the present study: can gamified feedback improve performance and engagement while preserving the realism and seriousness of fire-safety training?
+
+\subsection{Serious Games, Flow, and Motivation}
+
+The current project is also related to serious games research. Serious games use game structures for purposes beyond entertainment, such as training, education, health, or social change \cite{abt1970serious,prensky2001digital,mcgonigal2011reality}. A VR fire-safety simulation can be understood as a serious training system because its purpose is to improve emergency preparedness rather than provide entertainment.
+
+Motivation is important in this context because users may not naturally seek out fire-safety training. A gamified system can make training feel more active and engaging, which may encourage users to pay closer attention and repeat the training. Ryan and Deci's self-determination theory suggests that motivation can be influenced by autonomy, competence, and relatedness \cite{ryan2000self}. A VR simulation may support competence by giving users feedback on their performance. Csikszentmihalyi's concept of flow is also relevant because training may be most engaging when the challenge level is clear, feedback is immediate, and goals are understandable \cite{csikszentmihalyi1990flow}.
+
+At the same time, motivation must serve the training objective. If a user is motivated only to earn points, the design may fail to encourage deeper understanding. Therefore, the gamified elements in the current project are designed to reinforce safety reasoning. Points are not arbitrary rewards; they represent safety-relevant consequences.
+
+\subsection{Evaluating VR Training Systems}
+
+Evaluation is a major concern in VR safety-training research. Many studies collect subjective user feedback, such as satisfaction or perceived usefulness, but subjective feedback alone does not prove that users learned or behaved safely. Bikkina et al. address this issue by evaluating VR-based fire-safety training with both objective and subjective measures, including task completion time, workload, performance improvement, and qualitative feedback \cite{bikkina2025learnings}. Their approach is important because it shows that fire-safety training should be evaluated through multiple kinds of evidence.
+
+The present study follows this mixed-evaluation approach. Objective measures include correct actions, unsafe actions, time-based behavior, task completion, and knowledge test improvement. Subjective measures include usability, engagement, perceived realism, and confidence. Combining these measures allows the study to answer more than one question. A gamified condition may be more engaging, but that does not necessarily mean it improves safety behavior. A non-gamified VR condition may feel more realistic, but that does not necessarily mean users learn more. A traditional condition may improve quiz scores, but that does not necessarily mean users can act correctly in a simulated emergency.
+
+\subsection{Summary of Research Gap}
+
+Prior research supports VR as a useful medium for safety training and shows that VR can simulate fire drills, evacuation tasks, extinguisher use, and hazardous environments. Prior work also shows that gamified scoring systems can be integrated into fire-safety learning environments. However, the literature leaves several gaps. First, many VR fire-safety systems emphasize evacuation rather than broader residential decision-making. Second, many evaluations rely heavily on subjective feedback instead of behavioral performance data. Third, few studies directly compare gamified VR, non-gamified VR, and traditional instruction within the same fire-safety scenario.
+
+The current project addresses these gaps by proposing a controlled comparison of three training conditions in a residential grease-fire scenario. The study measures both performance and experience, allowing the research to evaluate whether gamification adds value beyond immersion alone. This makes the project relevant to VR training design, fire-safety education, and HCI research on serious immersive systems.
+
+\section{Proposed VR Fire-Safety Training System}
+\label{sec:system}
+
+\subsection{System Overview}
+
+The proposed system is a VR fire-safety training environment set inside a two-story residential house. The scenario focuses on a kitchen grease fire that has the potential to escalate if the user performs unsafe actions or delays too long. The training environment is designed to evaluate how users respond to common residential fire hazards and whether gamified feedback improves their safety-related decision-making.
+
+The user begins in a residential setting and is exposed to cues that indicate an emergency, such as visible smoke, an alarm, and signs of a developing fire. The user must explore the environment, identify the source of the fire, evaluate whether suppression is appropriate, interact with available objects, avoid unsafe actions, and evacuate if necessary. The scenario includes both safe and unsafe choices so that the system can evaluate decision-making.
+
+The system supports three training conditions. In the gamified VR condition, users receive points, penalties, and a final performance summary. In the non-gamified VR condition, users experience the same environment and tasks but do not receive game-like scoring. In the traditional instruction condition, users receive fire-safety information through non-immersive materials such as slides, text, or video. The purpose of this structure is to isolate the effect of gamified feedback from the effect of VR immersion.
+
+\subsection{Environment Design}
+
+The environment is a two-story residential house. The first floor includes a kitchen, living room, hallway, front door, and possible alternative exit. The second floor may include bedrooms and a hallway. The kitchen is the primary location of the grease-fire scenario. The house layout is intentionally familiar because residential fire-safety training should reflect spaces that users can imagine encountering in everyday life.
+
+The layout includes multiple decision points. Users may need to determine whether it is safe to approach the kitchen, whether smoke blocks a hallway, whether a door should be opened or closed, and which route provides the safest exit. These decision points are included to prevent the task from becoming a simple linear path. A realistic emergency requires users to interpret the environment and adapt their actions.
+
+The environment should include clear visual and auditory cues. Visual cues include smoke, flames, blocked paths, doors, windows, kitchen appliances, and safety equipment. Auditory cues include a smoke alarm, fire sounds, and possibly instructional prompts before the scenario begins. These cues help create urgency while also giving the user information needed for decision-making.
+
+\subsection{Fire Scenario}
+
+The main scenario is a residential grease fire in the kitchen. A grease fire is useful for training because it involves common misconceptions and high-risk decisions. For example, users may incorrectly attempt to use water, which is unsafe for grease fires. Users may also attempt to move burning cookware, remain near the fire for too long, or fail to evacuate when the fire becomes uncontrollable.
+
+The scenario is designed around several expected safe actions:
+
+\begin{enumerate}
+  \item Identify the fire source.
+  \item Avoid using water on the grease fire.
+  \item Turn off the heat source if it is safe to do so.
+  \item Use an appropriate extinguisher or cover if available and safe.
+  \item Close doors when leaving affected areas if appropriate.
+  \item Avoid smoke-filled areas.
+  \item Evacuate when suppression is unsafe or unsuccessful.
+  \item Call emergency services after reaching safety.
+\end{enumerate}
+
+The scenario also includes unsafe actions:
+
+\begin{enumerate}
+  \item Applying water to the grease fire.
+  \item Remaining too close to the fire for too long.
+  \item Opening doors that increase exposure to smoke or fire.
+  \item Ignoring safe exits.
+  \item Failing to evacuate after the fire escalates.
+  \item Choosing irrelevant or unsafe objects.
+  \item Delaying emergency response.
+\end{enumerate}
+
+These actions form the basis of the scoring rubric and objective performance measures.
+
+\subsection{Interaction Design}
+
+Users interact with the environment using VR controllers or hand-tracking input, depending on available hardware. The interaction system should allow users to move through the house, open and close doors, pick up or select objects, operate safety equipment, and choose evacuation routes. The interaction design should be simple enough that users are not primarily tested on gaming skill or VR familiarity.
+
+The system should include a short practice period before the fire-safety scenario begins. During practice, users learn how to move, select objects, and interact with doors or equipment. This practice phase reduces the chance that performance differences are caused by unfamiliarity with the controls rather than fire-safety decision-making.
+
+The simulation should avoid excessive interface clutter. In the gamified condition, points and feedback should be visible but not overwhelming. In the non-gamified condition, the same environment should be used without score displays or game-like reward messages. This helps ensure that the main difference between the VR conditions is the feedback structure rather than the environment itself.
+
+\subsection{Gamified Feedback System}
+
+The gamified condition uses a score-based system to reward safe decisions and penalize unsafe decisions. The purpose of the score is not simply to make the simulation entertaining. Instead, the score functions as feedback that helps users understand the safety consequences of their actions. This design builds on prior work where correct actions received positive points, incorrect actions received negative points, and missed actions received no points \cite{somerkoski2020digital}.
+
+\begin{table}
+  \caption{Example Scoring Categories for the Gamified VR Condition}
+  \label{tab:scoring}
+  \begin{tabular}{p{0.28\linewidth}p{0.44\linewidth}r}
+    \toprule
+    Action Type & Example Action & Score \\
+    \midrule
+    Correct suppression decision & Uses appropriate extinguisher or lid if safe & +10 \\
+    Correct evacuation decision & Leaves when the fire becomes unsafe & +10 \\
+    Smoke avoidance & Avoids smoke-filled hallway or chooses safer route & +5 \\
+    Door control & Closes door behind them when evacuating & +5 \\
+    Emergency response & Calls emergency services after evacuating & +5 \\
+    Unsafe suppression & Uses water on grease fire & -15 \\
+    Unsafe delay & Remains near fire too long & -10 \\
+    Unsafe navigation & Enters heavily smoke-filled area unnecessarily & -10 \\
+    Missed action & Fails to call emergency services & 0 or -5 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+At the end of the scenario, users receive a summary of their performance. The summary should identify safe actions, unsafe actions, missed actions, total score, and brief explanations. This post-scenario feedback is important because it turns the experience into a learning opportunity. It also allows users to reflect on why a decision was safe or unsafe.
+
+\subsection{Non-Gamified VR Condition}
+
+The non-gamified VR condition uses the same house, hazards, objects, and task structure as the gamified VR condition. However, it removes points, penalties, badges, and final score summaries. Users may still receive basic task instructions, but they do not receive game-like performance feedback during the scenario.
+
+This condition is necessary because it separates the effect of VR immersion from the effect of gamification. If both VR conditions outperform traditional instruction, that would suggest that immersive practice is useful. If the gamified condition outperforms the non-gamified condition, that would suggest that gamified feedback adds value beyond immersion. If the non-gamified condition performs as well as or better than the gamified condition, that may suggest that gamification is unnecessary or potentially distracting.
+
+\subsection{Traditional Instruction Condition}
+
+The traditional instruction condition uses non-immersive training material such as slides, written instructions, or a short video. The content should cover the same core fire-safety principles as the VR conditions, including identifying hazards, avoiding water on grease fires, using appropriate suppression methods if safe, evacuating when needed, avoiding smoke, closing doors, and calling emergency services.
+
+This condition serves as a baseline. It represents a common form of safety instruction and allows the study to compare active VR training with passive or semi-passive learning. To make the comparison fair, the traditional condition should take approximately the same amount of time as the VR training session and should cover the same safety concepts.
+
+\subsection{System Design Rationale}
+
+The system is designed around four principles. First, the scenario should be realistic enough to support meaningful decision-making. Second, the interaction design should be simple enough that users are evaluated on safety decisions rather than VR gaming skill. Third, the scoring system should reinforce safety reasoning rather than distract from it. Fourth, the study should measure both behavior and experience.
+
+These principles are drawn from the related work. VR safety-training research supports the value of immersive practice \cite{kanade2022use,scorgie2024virtual}. Fire-safety VR research shows the importance of interaction and evacuation behavior \cite{kang2022combining,somerkoski2020digital}. Haptic and embodied-interaction research highlights the value of physical action \cite{seo2019interactive}. Evaluation research shows the importance of combining objective and subjective measures \cite{bikkina2025learnings}. The proposed system brings these ideas together in a controlled comparison of gamified VR, non-gamified VR, and traditional instruction.
+
+\section{Method}
+\label{sec:method}
+
+\subsection{Participants}
+
+Participants will be recruited from a university population and will complete the study individually. The final version of this section will report the total number of participants, the number assigned to each condition, recruitment method, compensation if any, and relevant demographic information. Participants should be eligible if they are adults and can safely use a VR headset. Participants should be excluded if they report severe motion-sickness sensitivity, uncorrected vision problems that prevent safe VR use, or any condition that would make VR participation unsafe.
+
+Before the experiment, participants complete a short background questionnaire. The questionnaire collects information about prior VR experience, prior video-game experience, prior fire-safety training, prior fire-extinguisher use, and comfort with emergency training scenarios. This information is collected because prior experience could affect performance. For example, a participant with extensive VR experience may navigate the environment more easily than a participant using VR for the first time. Similarly, a participant with prior fire-safety training may already know the correct response to a grease fire.
+
+Participants are assigned to one of three conditions: gamified VR training, non-gamified VR training, or traditional instruction. The final version of the paper will specify whether this assignment was random, convenience-based, counterbalanced, or otherwise structured.
+
+\subsection{Apparatus and Materials}
+
+The VR conditions use a head-mounted display with controllers or hand-tracking input. The final version of this section will report the exact headset, computer or standalone VR hardware, software engine, frame rate if relevant, and interaction method. The simulation consists of a two-story residential house with a kitchen fire scenario, smoke effects, doors, exit routes, and interactive safety objects. The system records user actions and time-based events where possible.
+
+The gamified VR condition includes a scoring interface. The interface displays or records points for safe actions, penalties for unsafe actions, and a final performance summary. The non-gamified VR condition uses the same environment but removes points, penalties, and game-like score feedback.
+
+The traditional instruction condition uses slides, written instructions, or video covering the same fire-safety concepts presented in the VR scenario. These materials explain the core safety principles relevant to the task, including avoiding water on a grease fire, using appropriate suppression techniques if safe, evacuating when needed, avoiding smoke, closing doors, and calling emergency services.
+
+The study uses the following evaluation materials:
+
+\begin{enumerate}
+  \item A background questionnaire.
+  \item A pre-test measuring fire-safety knowledge.
+  \item A post-test measuring fire-safety knowledge after training.
+  \item A usability questionnaire, such as the System Usability Scale.
+  \item An engagement or enjoyment questionnaire.
+  \item Optional open-ended interview questions.
+  \item A scoring rubric for safe and unsafe actions.
+\end{enumerate}
+
+\subsection{Procedure}
+
+Each participant completes the study in a single session. The final version of this section will report the average session length and any important procedural differences between conditions. The procedure is designed to be consistent across participants while allowing the training content to differ by condition.
+
+First, the researcher introduces the study and explains that the purpose is to evaluate fire-safety training methods. Participants are told that they will complete a training activity and answer questionnaires about their experience. Participants are also told that they can stop at any time if they feel uncomfortable, dizzy, or unwilling to continue.
+
+Second, participants complete the background questionnaire and pre-test. The background questionnaire measures prior experience with VR, games, and fire-safety training. The pre-test measures baseline fire-safety knowledge so that learning improvement can be assessed.
+
+Third, participants complete the assigned training condition. In the gamified VR condition, participants enter the VR house and complete the fire-safety scenario with points, penalties, and feedback. In the non-gamified VR condition, participants complete the same VR scenario without scoring or game-like feedback. In the traditional condition, participants review the instructional material without entering the VR environment.
+
+For the VR conditions, participants first complete a brief practice task to learn movement and interaction controls. This practice phase includes basic actions such as moving, selecting objects, and opening or closing a door. After practice, the fire-safety scenario begins. Timing starts when the participant enters the active emergency scenario or when the alarm/fire cue appears. Timing ends when the participant completes the scenario by evacuating, suppressing the fire safely, or reaching a defined endpoint.
+
+During the scenario, the system or researcher records key actions. These include safe actions, unsafe actions, missed actions, time to first response, time to evacuation, time spent near the fire, interaction with objects, and whether the participant selected an appropriate response to the grease fire. Errors are recorded but not corrected during the scenario unless the participant becomes unsafe or unable to continue. This allows the study to measure natural decision-making during the training task.
+
+After the training condition, participants complete the post-test, usability questionnaire, engagement questionnaire, and optional open-ended questions. Participants in the VR conditions are also asked about perceived realism, comfort, and whether the system felt serious or game-like. Participants are then debriefed.
+
+\subsection{Experimental Design}
+
+The experiment uses a between-subjects design with one independent variable: training condition. The training condition has three levels:
+
+\begin{enumerate}
+  \item Gamified VR training.
+  \item Non-gamified VR training.
+  \item Traditional instruction.
+\end{enumerate}
+
+The dependent variables include fire-safety knowledge improvement, correct action score, unsafe action count, time-based behavior, usability, engagement, perceived realism, and participant confidence.
+
+This design allows the study to compare whether VR training improves performance compared with traditional instruction and whether gamification provides additional benefits beyond VR immersion. The comparison between gamified VR and non-gamified VR is especially important because both conditions use the same environment. Therefore, differences between those two groups can be interpreted as evidence about the effect of gamified feedback rather than the effect of VR alone.
+
+\subsection{Measures}
+
+\subsubsection{Correct Action Score}
+
+Correct actions are safety-relevant behaviors that align with the training goals. Examples include avoiding water on the grease fire, using an appropriate extinguisher or covering method if safe, closing doors when evacuating, avoiding smoke-filled areas, choosing a safe exit, and calling emergency services. Each correct action is recorded and scored using the rubric in Appendix~\ref{app:scoring}.
+
+\subsubsection{Unsafe Action Count}
+
+Unsafe actions are behaviors that increase risk or contradict fire-safety principles. Examples include using water on a grease fire, remaining near the fire too long, opening a door into a hazardous area, ignoring smoke, choosing an unsafe route, or failing to evacuate after the fire escalates. Unsafe actions are counted separately from correct actions because a participant may perform some correct behaviors while still making dangerous mistakes.
+
+\subsubsection{Time-Based Measures}
+
+Time-based measures include time to first response, time to first safe action, time to evacuation, and time spent near the fire. These measures are important because emergency response is time-sensitive. A participant who eventually makes the correct decision but waits too long may still be at risk in a real fire scenario.
+
+\subsubsection{Knowledge Score}
+
+Fire-safety knowledge is measured using a pre-test and post-test. The pre-test measures baseline knowledge before training, while the post-test measures knowledge after training. The difference between post-test and pre-test scores is used as a learning measure. Questions focus on the same safety concepts represented in the scenario.
+
+\subsubsection{Engagement}
+
+Engagement is measured using a short questionnaire. Participants rate interest, attention, enjoyment, motivation, and willingness to repeat the training. Engagement is relevant because training systems are more useful when users are willing to complete and repeat them.
+
+\subsubsection{Usability}
+
+Usability is measured using a questionnaire such as the System Usability Scale. Usability is important because a VR training system may be ineffective if users find it confusing, uncomfortable, or difficult to operate. Poor usability could also interfere with performance measures.
+
+\subsubsection{Perceived Realism and Seriousness}
+
+Participants in the VR conditions rate the realism and seriousness of the scenario. These measures are especially important for the gamified condition because game-like feedback may affect how seriously users interpret the simulation. A useful gamified training system should increase motivation without making the emergency feel trivial.
+
+\subsection{Data Analysis Plan}
+
+The analysis will compare the three training conditions across the dependent variables. Descriptive statistics will be calculated for each condition, including means, standard deviations, and ranges. If the sample size and data distribution are appropriate, inferential tests such as one-way ANOVA will be used to compare conditions. If assumptions are not met or the sample is small, nonparametric alternatives such as the Kruskal-Wallis test may be used.
+
+For knowledge scores, the main analysis will compare pre-test to post-test improvement across conditions. For behavioral measures, the analysis will compare correct action scores, unsafe action counts, and time-based behavior across the VR conditions. The traditional instruction condition may not produce the same behavioral measures unless participants also complete an assessment scenario. If traditional participants complete only quizzes, the analysis should focus on knowledge scores and subjective measures for that group.
+
+Open-ended responses will be analyzed qualitatively by identifying recurring themes. Possible themes include realism, confusion, motivation, stress, usefulness of feedback, and whether points made the task feel more or less serious. These qualitative responses will help explain the quantitative results.
+
+\subsection{Hypotheses}
+
+The study is guided by the following hypotheses:
+
+\begin{description}
+  \item[H1:] Participants in the gamified VR condition will perform more correct fire-safety actions than participants in the non-gamified VR condition.
+  \item[H2:] Participants in the gamified VR condition will report higher engagement than participants in the non-gamified VR and traditional instruction conditions.
+  \item[H3:] Participants in both VR conditions will show stronger behavioral performance than participants who receive only traditional instruction, if all participants complete a comparable assessment scenario.
+  \item[H4:] Gamified feedback may improve engagement, but it may also reduce perceived realism or seriousness for some participants.
+\end{description}
+
+\section{Results}
+\label{sec:results}
+
+This section will be completed after the conducted experiment data are added. The final report should include the number of participants, participant background information, condition assignments, descriptive statistics, test results, and qualitative themes. The section should be organized by dependent variable rather than by participant.
+
+\subsection{Participant Summary}
+
+The final version of this section should report the total number of participants, how many participants were assigned to each condition, and relevant background information such as prior VR experience, prior gaming experience, prior fire-safety training, and prior extinguisher use.
+
+\subsection{Fire-Safety Knowledge}
+
+This section should report pre-test scores, post-test scores, and improvement by condition. The discussion should begin with the broad observation and then provide specific values.
+
+\subsection{Correct and Unsafe Actions}
+
+This section should report correct actions and unsafe actions for the VR conditions. If the traditional condition also includes a comparable assessment scenario, it should be included here as well.
+
+\subsection{Time-Based Behavior}
+
+This section should report time to first response, time to evacuation, and time spent near the fire. These results should be interpreted alongside action quality because fast behavior is not necessarily safe behavior.
+
+\subsection{Engagement, Usability, and Realism}
+
+This section should report questionnaire scores and qualitative feedback related to engagement, usability, realism, seriousness, and comfort.
+
+\subsection{Summary of Results}
+
+The final paragraph of the Results section should summarize the main finding in relation to the research questions and hypotheses.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Interpretation of Findings}
+
+The purpose of this study is to determine whether gamification improves fire-safety decision-making, engagement, and knowledge retention in a VR residential fire scenario. The comparison between gamified VR and non-gamified VR is central because it isolates the effect of gamified feedback. If participants in the gamified condition perform better, this would suggest that points, penalties, and performance summaries can guide users toward safer actions. If both VR conditions perform similarly, this would suggest that immersion and embodied practice may be more important than gamification. If the non-gamified condition performs better, that would suggest that game elements may distract from serious emergency decision-making.
+
+The results should be interpreted in relation to prior work. Kanade and Duffy and Scorgie et al. support VR as a promising safety-training medium, but they also identify the need for stronger evaluation methods \cite{kanade2022use,scorgie2024virtual}. Bikkina et al. show the value of combining objective performance metrics with subjective feedback \cite{bikkina2025learnings}. The present study follows that approach by measuring both user behavior and user experience. This is important because a training system can be engaging without being effective, or effective without being enjoyable. A strong training system should ideally support both.
+
+\subsection{Gamification and Safety Decision-Making}
+
+If the gamified condition improves correct action scores or reduces unsafe actions, one possible explanation is that feedback makes the consequences of actions more visible. In a real fire, the consequences of unsafe actions may be immediate and dangerous. In a simulation, those consequences must be represented through visual changes, task outcomes, or feedback. Points and penalties can help users notice which actions matter.
+
+However, gamification may also change how users approach the task. Some participants may experiment with unsafe actions because they are curious about the scoring system. Others may focus on maximizing points rather than thinking through the safest real-world behavior. For that reason, the final performance summary should explain actions in safety terms rather than only displaying a numerical score. A score alone may not teach; a score with explanation can support reflection.
+
+\subsection{Engagement and Motivation}
+
+Gamified feedback is expected to improve engagement because it gives users clear goals and immediate feedback. This is consistent with gamification theory and serious games research \cite{deterding2011gamification,kapp2012gamification,prensky2001digital}. In a fire-safety training context, engagement matters because users may be more likely to pay attention, complete the task, and repeat the training if they find the experience meaningful.
+
+At the same time, engagement should not be confused with learning. A participant may enjoy the gamified simulation but still fail to remember fire-safety principles. This is why the study includes knowledge tests and behavioral measures. The goal is not to show that gamification is more enjoyable; the goal is to evaluate whether it improves safety-relevant outcomes.
+
+\subsection{Realism and Seriousness}
+
+One concern with gamified emergency training is that game-like elements may reduce realism. If participants perceive the scenario as a game, they may not respond with the same seriousness they would bring to an actual emergency. This could weaken the educational value of the simulation.
+
+The design of the gamified feedback system should therefore be restrained. The score should reinforce safety decisions rather than dominate the experience. Visual effects should remain realistic rather than cartoonish. Feedback should explain consequences in practical terms. For example, instead of only showing a point penalty, the system should explain that using water on a grease fire can cause the fire to spread. This keeps the learning goal central.
+
+\subsection{Comparison With Related Work}
+
+The current project builds directly on prior VR fire-safety research but differs in its comparative design. Kang et al. demonstrate the value of combining physical interaction with virtual fire-drill training \cite{kang2022combining}. Seo et al. show how haptic feedback can improve extinguisher realism \cite{seo2019interactive}. Somerkoski et al. demonstrate that scoring can be incorporated into fire-safety learning \cite{somerkoski2020digital}. Bikkina et al. show the importance of objective and subjective evaluation \cite{bikkina2025learnings}.
+
+The present study connects these ideas by testing whether gamified feedback changes performance in a residential fire scenario. Rather than treating VR as one single training method, the study separates VR into gamified and non-gamified versions. This distinction is important because it helps identify which design features are responsible for training outcomes.
+
+\subsection{Design Implications}
+
+The study has several potential implications for VR fire-safety training design. First, VR training should include meaningful decision points rather than only linear evacuation paths. Second, feedback should be tied to safety reasoning, not arbitrary game rewards. Third, systems should measure unsafe actions as well as correct actions because both are important for safety. Fourth, training systems should include post-scenario reflection so that users understand why their decisions were safe or unsafe. Fifth, gamification should be designed carefully so that it supports engagement without reducing seriousness.
+
+These implications are relevant not only to residential fire training but also to other emergency training contexts. Similar design principles could apply to industrial hazards, laboratory safety, construction safety, or evacuation training.
+
+\section{Limitations and Threats to Validity}
+\label{sec:limitations}
+
+\subsection{Sample Size and Participant Population}
+
+A likely limitation of this study is sample size. If the experiment uses a small number of participants, the results may not generalize to a broader population. A student participant pool may also differ from the general public in age, technology experience, and familiarity with VR. If many participants are comfortable with games or VR, they may perform better than users with less technology experience.
+
+\subsection{Prior Experience}
+
+Prior VR experience, gaming experience, and fire-safety knowledge may influence performance. A participant who has used VR many times may navigate more easily than a first-time user. A participant who has taken fire-safety training may already know how to respond to a grease fire. The background questionnaire helps identify these factors, but a small study may not be able to fully control for them.
+
+\subsection{Simulation Realism}
+
+The VR scenario cannot perfectly reproduce a real fire. Real fires involve heat, smell, panic, physical danger, and unpredictable spread. A VR simulation may represent smoke and flames visually, but it cannot fully reproduce the sensory and emotional experience of an actual emergency. This limitation is common in VR safety training and should be considered when interpreting results \cite{khan2023smell,huang2025building}.
+
+\subsection{Hardware and Interaction Constraints}
+
+The hardware may limit realism. If users interact with objects through controllers, they may not experience the weight or resistance of real equipment. Seo et al. show that haptic feedback can improve extinguisher realism, but the current system may not include advanced haptics \cite{seo2019interactive}. This means that the study evaluates decision-making and interaction in VR, not full physical extinguisher skill.
+
+\subsection{Novelty Effects}
+
+Participants may find the VR conditions more engaging simply because VR is novel. This could inflate engagement scores, especially for users with little prior VR experience. A longer-term study would be needed to determine whether engagement remains high after repeated use.
+
+\subsection{Measurement Limitations}
+
+Some measures may be easier to interpret than others. Correct actions and unsafe actions can be counted, but the meaning of timing measures may be more complex. A faster evacuation is not always better if the user ignores important safety actions. Similarly, a longer time in the environment may indicate confusion, but it may also indicate careful decision-making. For this reason, time-based measures should be interpreted alongside action quality.
+
+\subsection{Ecological Validity}
+
+The study takes place in a controlled environment. Real emergencies involve more stress, uncertainty, social pressure, and physical danger. Participants also know that the simulation is not real, which may affect their behavior. The study can provide evidence about training performance in a simulated environment, but it cannot prove that users would behave identically in a real fire.
+
+\section{Ethical and Safety Considerations}
+\label{sec:ethics}
+
+VR fire-safety training involves ethical and safety considerations because participants are exposed to emergency content and immersive technology. Participants should be informed about the nature of the simulation before beginning. They should know that the scenario includes fire, smoke, alarms, and emergency decision-making. They should also be told that they may stop at any time.
+
+Cybersickness is another concern. VR can cause dizziness, nausea, eye strain, or discomfort for some users. Participants should be screened for severe motion-sickness sensitivity and should be allowed to take breaks or withdraw. The researcher should monitor participants during the VR session and stop the session if a participant appears uncomfortable.
+
+The study should also avoid creating unnecessary stress. Although the simulation should feel realistic enough to support training, it should not attempt to frighten participants excessively. The goal is education, not fear. The scenario should be designed to create urgency while remaining appropriate for a classroom research setting.
+
+Data privacy should also be considered. The system may record participant actions, questionnaire responses, and possibly demographic information. Data should be stored securely and reported in aggregate form. Participants should not be identified by name in the report.
+
+Finally, the training should not create false confidence. A VR simulation can support learning, but it does not replace professional fire-safety certification or live emergency training. The final report should describe the system as a training and research tool rather than a complete substitute for all forms of fire-safety education.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper presents a VR-based residential fire-safety training system designed to compare gamified VR, non-gamified VR, and traditional instruction. The project responds to a key challenge in fire-safety education: learners must not only know correct procedures, but also apply them during stressful and dynamic situations. VR is well suited to this challenge because it allows users to practice emergency decision-making in a controlled and repeatable environment.
+
+The proposed system places users in a two-story residential house during a grease-fire scenario. Users must identify hazards, avoid unsafe actions, interact with safety objects, and decide whether to suppress the fire or evacuate. The gamified condition adds points, penalties, and a final performance summary to evaluate whether game-like feedback improves safety behavior and engagement. The non-gamified VR condition tests whether immersion alone is sufficient, while the traditional instruction condition provides a baseline.
+
+The paper also provides an evaluation method that combines objective behavioral measures with subjective user feedback. Correct actions, unsafe actions, time-based behavior, knowledge scores, usability, engagement, and perceived realism all contribute to a more complete understanding of training effectiveness. This approach aligns with prior research calling for stronger performance-based evaluation in VR safety training.
+
+After the conducted experiment is added, the final version of this paper will be able to report whether gamification improved decision-making, engagement, and retention. Regardless of the final outcome, the study contributes to the design of immersive safety-training systems by clarifying how gamified feedback can be evaluated in a serious emergency-training context.
+
+\nocite{*}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{vr_fire_safety_refs}
+
+\appendix
+
+\section{Example Pre-Test and Post-Test Questions}
+\label{app:questions}
+
+The following questions can be used before and after training. The exact same questions may be used for both tests, or a parallel version may be created to reduce memorization effects.
+
+\begin{enumerate}
+  \item What is the safest first response if a small grease fire starts in a pan?
+  \item Why should water not be used on a grease fire?
+  \item When should a person stop trying to suppress a fire and evacuate instead?
+  \item What should a person do after evacuating from a residential fire?
+  \item Why can closing doors be useful during a fire evacuation?
+  \item What should a person do if smoke blocks the nearest exit route?
+  \item What information should be given when calling emergency services?
+  \item What are signs that a fire is no longer safe to fight?
+  \item Why is it dangerous to spend too much time near a growing fire?
+  \item What is the difference between knowing a fire-safety rule and applying it during an emergency?
+\end{enumerate}
+
+\section{Example Scoring Rubric}
+\label{app:scoring}
+
+\begin{table}[h]
+  \caption{Expanded Scoring Rubric for the Fire-Safety Scenario}
+  \label{tab:expanded-scoring}
+  \begin{tabular}{p{0.32\linewidth}p{0.46\linewidth}r}
+    \toprule
+    Category & Behavior & Score \\
+    \midrule
+    Fire identification & Correctly identifies kitchen/grease fire source & +5 \\
+    Safe suppression & Uses appropriate method if fire is small and safe & +10 \\
+    Unsafe suppression & Uses water on grease fire & -15 \\
+    Heat source & Turns off heat source if safely reachable & +5 \\
+    Evacuation & Evacuates when fire becomes unsafe & +10 \\
+    Delay & Remains near fire after escalation & -10 \\
+    Smoke avoidance & Avoids smoke-filled route & +5 \\
+    Smoke exposure & Enters heavy smoke unnecessarily & -10 \\
+    Door control & Closes door when leaving fire area & +5 \\
+    Emergency call & Calls emergency services after evacuation & +5 \\
+    Missed emergency call & Fails to call emergency services & -5 \\
+    Unsafe object & Selects irrelevant or dangerous object & -5 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Example Post-Study Questionnaire}
+\label{app:questionnaire}
+
+Participants can answer each item on a 1--5 scale, where 1 = strongly disagree and 5 = strongly agree.
+
+\begin{enumerate}
+  \item The training was easy to understand.
+  \item The training helped me understand what to do during a residential fire.
+  \item The training helped me understand what not to do during a grease fire.
+  \item The VR environment felt realistic.
+  \item The fire scenario felt serious.
+  \item The training kept me engaged.
+  \item The feedback helped me understand my mistakes.
+  \item The controls were easy to use.
+  \item I would be willing to use this type of training again.
+  \item I feel more confident about responding to a small residential fire after this training.
+\end{enumerate}
+
+Open-ended questions:
+
+\begin{enumerate}
+  \item What part of the training was most helpful?
+  \item What part of the training was confusing?
+  \item Did the score or feedback make the simulation feel more useful or less realistic? Explain.
+  \item What would you change about the simulation?
+  \item What did you learn from the training?
+\end{enumerate}
+
+\end{document}
+
