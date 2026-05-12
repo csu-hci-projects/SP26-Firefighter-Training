@@ -3,27 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 
-/// <summary>
-/// Attach to a World Space Canvas GameObject.
-///
-/// UI FLOW:
-/// 1. On spawn: Only Start button is visible
-/// 2. On button press: Button hides, timer appears and starts
-/// 3. On all fires out: Timer stops, completion message and fire fact appear
-///
-/// CANVAS HIERARCHY:
-/// Canvas (World Space, Scale 0.002)
-/// └── BackgroundPanel (Image - dark gray)
-///     ├── StartButton (Button) - visible at start
-///     │   └── StartButtonText (TextMeshPro) "Start Training"
-///     ├── TimerText (TextMeshPro) - hidden at start
-///     ├── FactText (TextMeshPro) - hidden at start
-///     └── CompletionText (TextMeshPro) - hidden at start
-/// </summary>
 public class TrainingDisplay : MonoBehaviour
 {
     [Header("UI References")]
     public Button startButton;
+    public ToolSpawner toolSpawner;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI factText;
     public TextMeshProUGUI completionText;
@@ -33,23 +17,18 @@ public class TrainingDisplay : MonoBehaviour
 
     public TextMeshProUGUI instructionText;
 
-    [Header("Fire Objects")]
     public List<FireBehavior> fires = new List<FireBehavior>();
 
-    [Header("Display Settings")]
     public float distanceFromPlayer = 2f;
     public float heightOffset = 0f;
 
-    [Header("Player Reference")]
     public Transform playerTransform;
 
-    [Header("Colors")]
     public Color backgroundColor = new Color(0.15f, 0.15f, 0.15f, 1f);
     public Color timerColor = new Color(1f, 0.8f, 0.2f, 1f);
     public Color factColor = new Color(0.8f, 0.8f, 0.8f, 1f);
     public Color completionColor = new Color(0.2f, 1f, 0.4f, 1f);
 
-    // Internal
     private float elapsedTime = 0f;
     private bool timerRunning = false;
     private bool completed = false;
@@ -85,7 +64,6 @@ public class TrainingDisplay : MonoBehaviour
         if (factText != null) factText.color = factColor;
         if (completionText != null) completionText.color = completionColor;
 
-        // INITIAL STATE: only start button visible
         SetInitialState();
 
         // Hook up button
@@ -137,7 +115,8 @@ public class TrainingDisplay : MonoBehaviour
         if (factText != null)      factText.gameObject.SetActive(false);
         if (completionText != null) completionText.gameObject.SetActive(false);
 
-        Debug.Log("Training started!");
+
+        if (toolSpawner != null) toolSpawner.StartSpawning();
     }
 
     private void PositionInFrontOfPlayer()
@@ -200,6 +179,5 @@ public class TrainingDisplay : MonoBehaviour
             factText.text = fireSafetyFacts[Random.Range(0, fireSafetyFacts.Length)];
         }
 
-        Debug.Log($"Training complete! Time: {minutes:00}:{seconds:00}");
     }
 }
